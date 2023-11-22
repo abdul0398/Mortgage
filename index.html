@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charSet="UTF-8"/>
+        <link rel="stylesheet" href="./assests/style.css">
+    
+        <style type="text/css">
+            @font-face {
+                font-family: AvenirSubset;
+                src: url('/spa-assets/fonts/avenir-optimized-subset.woff2') format('woff2'), url('/spa-assets/fonts/avenir-optimized-subset.woff') format('woff');
+                unicode-range: U+24,U+2C,U+30-39,U+41-5A,U+61-7A;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Avenir Next";
+                src: url("/spa-assets/fonts/avenir-regular.woff2") format("woff2"), url("/spa-assets/fonts/avenir-regular.woff") format("woff");
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Avenir Next";
+                src: url("/spa-assets/fonts/avenir-medium.woff2") format("woff2"), url("/spa-assets/fonts/avenir-medium.woff") format("woff");
+                font-weight: 500;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Avenir Next";
+                src: url("/spa-assets/fonts/avenir-demibold.woff2") format("woff2"), url("/spa-assets/fonts/avenir-demibold.woff") format("woff");
+                font-weight: 600;
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: "Avenir Next";
+                src: url("/spa-assets/fonts/avenir-bold.woff2") format("woff2"), url("/spa-assets/fonts/avenir-bold.woff") format("woff");
+                font-weight: bold;
+                font-display: swap;
+            }
+
+            body {
+                font-family: sans-serif;
+            }
+
+            .fonts-loaded-1 body {
+                font-family: AvenirSubset;
+            }
+
+            .fonts-loaded-2 body {
+                font-family: "Avenir Next", sans-serif;
+            }
+        
+            #btn_cal{
+            border: none;
+            background-color: #1a2258;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 4px;
+            font-weight: 900;
+        }
+        #btn_cal:hover{
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <aside id="gallery-ad-modal" aria-label="gallery ad modal"></aside>
+        <div id="fb-root"></div>
+        <div class="ReactModalPortal"></div>
+        <div id="content">
+            <div data-tracking="{&quot;isMobile&quot;:false,&quot;page&quot;:&quot;MortgageCalculator&quot;}">
+                <div id="g_id_onload" data-prompt_parent_id="g_id_onload" data-client_id="869688580448-cnk8qkf9aubkjru74bvpo6p8npr4dbir.apps.googleusercontent.com" style="position:absolute;right:400px;top:54px;width:0;height:0;z-index:1001"></div>
+               
+                <div id="appContent" class="undefined">
+                    <div class="htZ53">
+                        <div class="_30gmO">
+                            <div>
+                                <h1 class="Z0npN _1roBp">Mortgage Calculator - Find the Best Mortgage Rates in 2023</h1>
+                                <div class="_1vQLd">
+                                    <p class="JPolj _10yTh">Fill in your details in the calculator below to calculate your mortgage repayments.</p>
+                                </div>
+                            </div>
+                            <div class="XwHHe WUmYP">
+                                <div class="Venlx">
+                                    <div class="_2MJxl">
+                                        <label for="property_value">Property value</label>
+                                    </div>
+                                    <div class="_27w2z">
+                                        <div class="_20K75 Cs00F">
+                                            <input type="text" id="price" class="_1HTP5 _2RYLp _1dMH0" oninput="removeZero(this)" placeholder="Enter a price" value="500000"/>
+                                            <span class="_2nEaH _2Mcv8">SGD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_2IQEV Venlx">
+                                    <label for="loan_tenure" class="_1sxpo">Tenure (years)</label>
+                                    <div class="_1HIht _1dxU0">
+                                        <input style="width: 100%" type="range" id="tenurerange" min="4" max="35" step="1" value="30" oninput="updatetenureRange(this.value)">
+                                     <div>
+                                            <div>
+                                                <div style="height:6px;background:#1757d7;left:1%" class="_3_PEh"></div>
+                                                <div style="left:1%" class="htKNp _1Evvz">4</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#1757d7;left:20.35483870967742%" class="_3_PEh"></div>
+                                                <div style="left:20.35483870967742%" class="htKNp _1Evvz">10</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#1757d7;left:51.61290322580645%" class="_3_PEh"></div>
+                                                <div style="left:51.61290322580645%" class="htKNp _1Evvz">20</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#1757d7;left:81.87096774193549%" class="_3_PEh"></div>
+                                                <div style="left:81.87096774193549%" class="htKNp _1Evvz">30</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#1757d7;left:99%" class="_3_PEh"></div>
+                                                <div style="left:100%" class="htKNp">35</div>
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                    <input type="text" id="tenureInput" value="30" class="ttePw" oninput="updatetenureoutput(this.value)">
+
+                                </div>
+                                <div class="_2IQEV Venlx">
+                                    <label for="loan_percent" class="_1sxpo">Loan (%)</label>
+                                    <div class="_1HIht _1dxU0">
+                                        <input style="width: 100%" type="range" id="loanrange" min="10" max="75" step="1" value="75" oninput="updateLoanRange(this.value)">
+                                        <div>
+                                            <div>
+                                                <div style="height:6px;background:#17ba89;left:1%" class="_3_PEh"></div>
+                                                <div style="left:1%" class="htKNp _1Evvz">10</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#17ba89;left:15.384615384615385%" class="_3_PEh"></div>
+                                                <div style="left:15.384615384615385%" class="htKNp _1Evvz">20</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#17ba89;left:46.15384615384615%" class="_3_PEh"></div>
+                                                <div style="left:46.15384615384615%" class="htKNp _1Evvz">40</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#17ba89;left:76.92307692307693%" class="_3_PEh"></div>
+                                                <div style="left:76.92307692307693%" class="htKNp _1Evvz">60</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#17ba89;left:100%" class="_3_PEh"></div>
+                                                <div style="left:100%" class="htKNp _1Evvz">75</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="loanInput" value="75" class="ttePw" oninput="updateLoanoutput(this.value)">
+                                </div>
+                                <div class="_2IQEV Venlx">
+                                    <label for="interest_rate" class="_1sxpo">Interest rate (%)</label>
+                                    <div class="_1HIht _1dxU0">
+                                        <input style="width: 100%" type="range" id="interestrange" min="0.1" max="6" step="0.1" value="4" oninput="updateInterestRange(this.value)">
+                                        <div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:15.254237288135592%" class="_3_PEh"></div>
+                                                <div style="left:15.254237288135592%" class="htKNp _1Evvz">1</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:32.20338983050847%" class="_3_PEh"></div>
+                                                <div style="left:32.20338983050847%" class="htKNp _1Evvz">2</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:49.15254237288135%" class="_3_PEh"></div>
+                                                <div style="left:49.15254237288135%" class="htKNp _1Evvz">3</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:66.10169491525423%" class="_3_PEh"></div>
+                                                <div style="left:66.10169491525423%" class="htKNp _1Evvz">4</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:83.05084745762711%" class="_3_PEh"></div>
+                                                <div style="left:83.05084745762711%" class="htKNp">5</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:100%" class="_3_PEh"></div>
+                                                <div style="left:100%" class="htKNp">6</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:0%" class="_3_PEh"></div>
+                                                <div style="left:-2%" class="htKNp _1Evvz">0.1</div>
+                                            </div>
+                                            <div>
+                                                <div style="height:6px;background:#ea549c;left:6.779661016949152%" class="_3_PEh"></div>
+                                                <div style="left:6.779661016949152%" class="htKNp _1Evvz">0.5</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="interestInput" value="4" class="ttePw" oninput="updateInterestoutput(this.value)">
+                                </div>
+                                <div style=" margin-top:30px; text-align: center;">
+                                    <button id="btn_cal" >Calculate</button>
+                                </div>
+                            </div>
+                            <div class="_1n-In _1BCs0">
+                                <div class="_2aYvD">
+                                    <h2 class="Z0npN _1eVLG">Your Mortgage Breakdown</h2>
+                                </div>
+                                <div class="Er6LY">
+                                    <div class="EwSLQ">
+                                        <div class="_1ltLs">
+                                            <h3 class="Z0npN _12euW">Loan amount (75%)</h3>
+                                            <p class="JPolj aU_nd" id="loan_amount">$375,000</p>
+                                            <div class="_1-bt8">
+                                                <svg viewBox="-1 -1 2 2" style="transform:rotate(-0.25turn)">
+                                                    <circle cx="0" cy="0" r="1" fill="transparent"></circle>
+                                                    <circle cx="0" cy="0" r="0.9" fill="transparent" stroke="#D3D3D3" stroke-width="0.1"></circle>
+                                                    <circle id="downpayment_circle" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#1a66a0" stroke-width="0.1" style="stroke-dashoffset:998.575;transform:rotate(0deg)"></circle>
+                                                    <text text-anchor="middle" x="0" y="0" transform="rotate(90)" style="pointer-events:none">
+                                                        <tspan x="1.9" dy="0" id="downpayment" class="_11TX6 _3j9NL">$125,000</tspan>
+                                                        <tspan x="0" dy="0.25" class="_1oFDL">Downpayment</tspan>
+                                                    </text>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="_1ltLs">
+                                            <h3 class="Z0npN _12euW">Monthly payments est.</h3>
+                                            <div class="BHL_I">
+                                                <div class="_3VrG6">
+                                                    <div class="_1aAKe" style="background-color:#7fcc89"></div>
+                                                    <p id="EmiPrincipal" class="JPolj bopb9">$540 Principal</p>
+                                                </div>
+                                                <div class="_3VrG6">
+                                                    <div class="_1aAKe" style="background-color:#1a66a0"></div>
+                                                    <p id="EmiInterest" class="JPolj bopb9">$1,250 Int</p>
+                                                </div>
+                                            </div>
+                                            <div class="_1-bt8">
+                                                <svg viewBox="-1 -1 2 2" style="transform:rotate(-0.25turn)">
+                                                    <circle cx="0" cy="0" r="1" fill="transparent"></circle>
+                                                    <circle cx="0" cy="0" r="0.9" fill="transparent" stroke="#D3D3D3" stroke-width="0.1"></circle>
+                                                    <circle id="emi1" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#7fcc89" stroke-width="0.1" style="stroke-dashoffset:998.29;transform:rotate(0deg)"></circle>
+                                                    <circle id="emi2" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#1a66a0" stroke-width="0.1" style="stroke-dashoffset:996.01;transform:rotate(108deg)"></circle>
+                                                    <text text-anchor="middle" x="0" y="0" transform="rotate(90)" style="pointer-events:none">
+                                                        <tspan x="1.9" dy="0" id="emi_val" class="_11TX6 _3j9NL">$1,790</tspan>
+                                                        <tspan x="0" dy="0.25" class="_1oFDL">/month</tspan>
+                                                    </text>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span></span>
+                <div class="_1w0S0">
+                    <span></span>
+                </div>
+                <div class>
+                    <div class="_3riCN">
+                        <div class="_1vM7Q" style="height:calc(100vh - 50px)">
+                            <div class="_1mm1D">
+                                <header class="_2fZi3">
+                                    <div class="_3I3YI">Shortlist folder is empty</div>
+                                    <div class="Olq-z">Search for listings to shortlist</div>
+                                </header>
+                                <div class="_2Oq1f">
+                                    <img alt=" " src="/spa-assets/web-icons/empty-listing-card.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span></span>
+            </div>
+        <script>
+        function removeZero(input) {
+            const value = input.value;
+
+            if (value.charAt(0) === '0') {
+                input.value = value.slice(1); // Remove the leading 0
+            }
+        }
+        function updatetenureoutput(value) {
+            
+            document.getElementById('tenurerange').value = value;
+        }
+        function updatetenureRange(value) {
+            value = parseInt(value);
+            if (value >= 4 && value <= 35) {
+                document.getElementById('tenureInput').value = value;
+                
+            }
+        }
+        function updateLoanoutput(value){
+            document.getElementById('loanrange').value = value;
+            
+        }
+        function updateLoanRange(value) {
+            value = parseInt(value);
+            if (value >= 10 && value <= 75) {
+                document.getElementById('loanInput').value = value;
+                
+            }
+            
+        }
+        function updateInterestRange(value) {
+            value = parseFloat(value);
+            if (value >= 0.1 && value <= 6) {
+                document.getElementById('interestInput').value = value;
+                
+            }
+        }
+        function updateInterestoutput(value) {
+            document.getElementById('interestrange').value = value; 
+        }
+        
+        
+        
+       document.getElementById("btn_cal").addEventListener("click", ()=>{
+        event.preventDefault();
+        const price = parseInt(document.getElementById("price").value);
+        const loan = parseInt(document.getElementById("loanrange").value);
+        const interest_rate = parseFloat(document.getElementById("interestrange").value);
+        const tenurerange = parseInt(document.getElementById("tenurerange").value);
+
+
+        const loanprice = (price /100) * loan;
+        const downPayment = price - loanprice
+
+// console.log(price, loan, interest_rate, tenurerange, loanprice, downPayment);
+
+        document.getElementById("loan_amount").innerText = formatNumberToDollar(loanprice);
+        document.getElementById("downpayment").textContent = formatNumberToDollar(downPayment)
+
+        const firstCircleValue = (5.7 / price) * downPayment;        
+        circle1 = document.getElementById("downpayment_circle").style.strokeDashoffset = 1000 - firstCircleValue;
+        
+        // ######################################################################### // 
+        rate = interest_rate/12/100;
+        tenure = tenurerange * 12; 
+        
+        
+        emi = ((loanprice * rate * (1+rate)**tenure)/(((1+rate)**tenure)-1));
+
+        document.getElementById("emi_val").textContent = formatNumberToDollar(emi);
+    
+        const Emiinterest = loanprice * interest_rate/12/100;
+        const Emiprincipal = emi - Emiinterest;
+
+
+
+        document.getElementById("EmiPrincipal").innerText = formatNumberToDollar(Emiprincipal) + " Principal";
+        document.getElementById("EmiInterest").innerText = formatNumberToDollar(Emiinterest) + " Int";
+
+    
+        ratio = parseFloat(5.7 / (Emiinterest + Emiprincipal));
+
+        interestCircle_val = ratio * Emiinterest;
+        principalCircle_val = ratio * Emiprincipal
+
+        console.log(ratio, interestCircle_val, principalCircle_val);
+
+        document.getElementById("emi1").style.strokeDashoffset = 0
+        document.getElementById("emi2").style.strokeDashoffset =  1000 - interestCircle_val
+    })
+
+
+       function formatNumberToDollar(number) {
+        // Convert number to dollar notation with commas
+        return Number(number).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            maximumFractionDigits: 0
+
+        });
+    }
+        
+        </script>
+        </div>
+    </body>
+</html>
