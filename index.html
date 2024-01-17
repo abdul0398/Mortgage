@@ -204,7 +204,7 @@
                                 <div class="Er6LY">
                                     <div class="EwSLQ">
                                         <div class="_1ltLs">
-                                            <h3 class="Z0npN _12euW">Loan amount (75%)</h3>
+                                            <h3 class="Z0npN _12euW" id="loan_percent">Loan amount (75%)</h3>
                                             <p class="JPolj aU_nd" id="loan_amount">$375,000</p>
                                             <div class="_1-bt8">
                                                 <svg viewBox="-1 -1 2 2" style="transform:rotate(-0.25turn)">
@@ -212,8 +212,10 @@
                                                     <circle cx="0" cy="0" r="0.9" fill="transparent" stroke="#D3D3D3" stroke-width="0.1"></circle>
                                                     <circle id="downpayment_circle" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#1a66a0" stroke-width="0.1" style="stroke-dashoffset:998.575;transform:rotate(0deg)"></circle>
                                                     <text text-anchor="middle" x="0" y="0" transform="rotate(90)" style="pointer-events:none">
-                                                        <tspan x="2.2" dy="0" id="downpayment" class="_11TX6 _3j9NL">$125,000</tspan>
-                                                        <tspan x="0" dy="0.25" class="_1oFDL">Downpayment</tspan>
+                                                        <tspan id="downpayment"  class="_11TX6 _3j9NL">$125,000</tspan>
+                                                    </text>
+                                                    <text text-anchor="middle" x="0" y="0.2" transform="rotate(90)" style="pointer-events:none">
+                                                        <tspan   class="_1oFDL">Downpayment</tspan>                                                   
                                                     </text>
                                                 </svg>
                                             </div>
@@ -237,11 +239,14 @@
                                                     <circle id="emi1" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#7fcc89" stroke-width="0.1" style="stroke-dashoffset:998.29;transform:rotate(0deg)"></circle>
                                                     <circle id="emi2" class="_354me" x="0" y="0" r="0.9" fill="transparent" stroke="#1a66a0" stroke-width="0.1" style="stroke-dashoffset:996.01;transform:rotate(108deg)"></circle>
                                                     <text text-anchor="middle" x="0" y="0" transform="rotate(90)" style="pointer-events:none">
-                                                        <tspan x="2.2" dy="0" id="emi_val" class="_11TX6 _3j9NL">$1,790</tspan>
-                                                        <tspan x="0" dy="0.25" class="_1oFDL">/month</tspan>
+                                                        <tspan id="emi_val"  class="_11TX6 _3j9NL">$1,790</tspan>                                                   
+                                                    </text>
+                                                    <text text-anchor="middle" x="0" y="0.2" transform="rotate(90)" style="pointer-events:none">
+                                                        <tspan class="_1oFDL">/month</tspan>                                                   
                                                     </text>
                                                 </svg>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -326,7 +331,7 @@
         const downPayment = price - loanprice
 
 // console.log(price, loan, interest_rate, tenurerange, loanprice, downPayment);
-
+        document.getElementById("loan_percent").innerText = `Loan amount (${loan}%)`
         document.getElementById("loan_amount").innerText = formatNumberToDollar(loanprice);
         document.getElementById("downpayment").textContent = formatNumberToDollar(downPayment)
 
@@ -340,7 +345,7 @@
         
         emi = ((loanprice * rate * (1+rate)**tenure)/(((1+rate)**tenure)-1));
 
-        document.getElementById("emi_val").textContent = formatNumberToDollar(emi);
+        document.getElementById("emi_val").innerHTML = formatNumberToDollar(emi) +"<br>/month";
     
         const Emiinterest = loanprice * interest_rate/12/100;
         const Emiprincipal = emi - Emiinterest;
