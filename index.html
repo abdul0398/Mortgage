@@ -345,7 +345,7 @@
         
         emi = ((loanprice * rate * (1+rate)**tenure)/(((1+rate)**tenure)-1));
 
-        document.getElementById("emi_val").innerHTML = formatNumberToDollar(emi) +"<br>/month";
+        document.getElementById("emi_val").innerHTML = formatNumberToDollar(emi);
     
         const Emiinterest = loanprice * interest_rate/12/100;
         const Emiprincipal = emi - Emiinterest;
