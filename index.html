@@ -194,7 +194,7 @@
                                     </div>
                                     <input type="text" id="interestInput" value="4" class="ttePw" oninput="updateInterestoutput(this.value)">
                                 </div>
-                                <div style=" margin-top:30px; text-align: center;">
+                                <div style="margin:30px 0px 10px 0px; text-align: center;">
                                     <button id="btn_cal" >Calculate</button>
                                 </div>
                             </div>
@@ -316,10 +316,7 @@
         }
         function updateInterestoutput(value) {
             document.getElementById('interestrange').value = value; 
-        }
-        
-        
-        
+        }     
        document.getElementById("btn_cal").addEventListener("click", ()=>{
         event.preventDefault();
         const price = parseInt(document.getElementById("price").value);
@@ -367,8 +364,6 @@
         document.getElementById("emi1").style.strokeDashoffset = 0
         document.getElementById("emi2").style.strokeDashoffset =  1000 - interestCircle_val
     })
-
-
        function formatNumberToDollar(number) {
         // Convert number to dollar notation with commas
         return Number(number).toLocaleString('en-US', {
@@ -378,7 +373,6 @@
 
         });
     }
-        
         </script>
         </div>
     </body>
